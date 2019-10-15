@@ -10,7 +10,7 @@ const CollectionItem = ({ id, name, imageUrl, price }) => {
       />
       <div className="collection-footer">
         <span className="collection-name">{name}</span>
-        <span className="collection-price">{`${price} ILS`}</span>
+        <span className="collection-price">{`${price}$`}</span>
       </div>
     </div>
   );
