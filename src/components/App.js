@@ -3,7 +3,7 @@ import HomePage from "../pages/homepage/HomePage";
 import ShopPage from "../pages/shop/shop";
 import Header from "./header/Header";
 import SignInUp from "../pages/SignInOut/SignInUp";
-import { auth } from "./firebase/Firebase";
+import { auth, createUserDocument } from "./firebase/Firebase";
 import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 
@@ -12,10 +12,17 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserDocument(userAuth);
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: { id: snapshot.id, ...snapshot.data() }
+          });
+        });
+      }
     });
-    console.log(this.unsubscribeFromAuth);
+    this.setState({ currentUser: null });
   }
 
   componentWillUnmount() {
