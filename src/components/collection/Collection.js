@@ -9,8 +9,8 @@ const Collection = ({ title, items }) => {
       <div className="collection-items">
         {items
           .filter((item, idx) => idx < 4)
-          .map(({ id, ...restOfItemProps }) => (
-            <CollectionItem key={id} {...restOfItemProps} />
+          .map(item => (
+            <CollectionItem key={item.id} item={item} />
           ))}
       </div>
     </div>

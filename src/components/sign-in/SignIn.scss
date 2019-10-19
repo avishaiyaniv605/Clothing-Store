@@ -7,7 +7,7 @@
     font-size: 20px;
     letter-spacing: 1px;
   }
-  
+
   .title {
     padding: 10px 0px;
   }
@@ -15,5 +15,9 @@
   .buttons {
     display: flex;
     justify-content: space-between;
+  }
+
+  .custom-button {
+    font-size: 14px;
   }
 }
