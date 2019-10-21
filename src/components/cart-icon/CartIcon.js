@@ -8,9 +8,11 @@ import { createStructuredSelector } from "reselect";
 
 const CartIcon = ({ toggleCartHidden, sumOfCartItems }) => {
   return (
-    <div className="cart-icon" onClick={toggleCartHidden}>
-      <ShopingIcon className="shopping-icon" />
-      <span className="item-counter">{sumOfCartItems}</span>
+    <div className="icon-container hvr-buzz-out">
+      <div className="cart-icon" onClick={toggleCartHidden}>
+        <ShopingIcon className="shopping-icon" />
+        <span className="item-counter">{sumOfCartItems}</span>
+      </div>
     </div>
   );
 };

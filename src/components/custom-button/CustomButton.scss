@@ -20,7 +20,9 @@
     background-color: white;
     color: black;
     border: 1px solid black;
+    transition: 300ms ease all;
   }
+
   &.google {
     background-color: #4285f4;
     color: white;

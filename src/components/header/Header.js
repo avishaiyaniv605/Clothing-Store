@@ -11,26 +11,30 @@ import {
   selectCurrenUser,
   selectCartHidden
 } from "../../redux/selectors/userSelector";
+import "../../utils/animations.scss";
 
 const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
-      <Link className="logo-container" to="/">
+      <Link className="logo-container hvr-bounce-in" to="/">
         <Logo className="logo" />
       </Link>
       <div className="options">
-        <Link className="option" to="/shop">
+        <Link className="option hvr-underline-from-center" to="/shop">
           SHOP
         </Link>
-        <Link className="option" to="/shop">
+        <Link className="option hvr-underline-from-center" to="/shop">
           CONTACT
         </Link>
         {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+          <div
+            className="option hvr-underline-from-center"
+            onClick={() => auth.signOut()}
+          >
             SIGN OUT
           </div>
         ) : (
-          <Link to="/signinup" className="option">
+          <Link to="/signinup" className="option hvr-underline-from-center">
             SIGN IN
           </Link>
         )}
