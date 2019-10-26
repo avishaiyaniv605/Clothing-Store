@@ -1,21 +1,23 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
-import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from "../../redux/cart/cart.actions";
+import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 
 import {
   CartContainer,
   ShoppingIcon,
   ItemCountContainer
-} from './cart-icon.styles';
+} from "./cart-icon.styles";
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
-  <CartContainer className="hvr-buzz-out" onClick={toggleCartHidden}>
-    <ShoppingIcon />
-    <ItemCountContainer>{itemCount}</ItemCountContainer>
-  </CartContainer>
+  <div className="hvr-buzz-out">
+    <CartContainer onClick={toggleCartHidden}>
+      <ShoppingIcon />
+      <ItemCountContainer>{itemCount}</ItemCountContainer>
+    </CartContainer>
+  </div>
 );
 
 const mapDispatchToProps = dispatch => ({

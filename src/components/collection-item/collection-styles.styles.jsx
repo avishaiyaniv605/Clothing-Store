@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import CustomButton from '../custom-button/custom-button.component';
+import styled from "styled-components";
+import CustomButton from "../custom-button/custom-button.component";
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;
@@ -12,6 +12,7 @@ export const CollectionItemContainer = styled.div`
   &:hover {
     .image {
       opacity: 0.8;
+      transition: 300ms ease all;
     }
 
     button {

@@ -9,6 +9,7 @@ const buttonStyles = css`
     background-color: white;
     color: black;
     border: 1px solid black;
+    transition: 300ms ease all;
   }
 `;
 
@@ -21,6 +22,7 @@ const invertedButtonStyles = css`
     background-color: black;
     color: white;
     border: none;
+    transition: 300ms ease all;
   }
 `;
 
@@ -29,8 +31,9 @@ const googleSignInStyles = css`
   color: white;
 
   &:hover {
-    background-color: #357ae8;
-    border: none;
+    background-color: white;
+    color: #4285f4;
+    border: 1px solid #4285f4;
   }
 `;
 

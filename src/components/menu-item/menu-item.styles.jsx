@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MenuItemContainer = styled.div`
-	height: ${({ size }) => (size ? '380px' : '240px')}
+	height: ${({ size }) => (size ? "380px" : "240px")}
 	min-width: 30%;
 	overflow: hidden;
+  font-weight: lighter;
 	flex: 1 1 auto;
 	display: flex;
 	align-items: center;
@@ -56,13 +57,11 @@ export const ContentContainer = styled.div`
 `;
 
 export const ContentTitle = styled.span`
-  font-weight: bold;
   margin-bottom: 6px;
   font-size: 22px;
   color: #4a4a4a;
 `;
 
 export const ContentSubtitle = styled.span`
-  font-weight: lighter;
   font-size: 16px;
 `;

@@ -18,7 +18,7 @@ import {
   WarningContainer
 } from './checkout.styles';
 
-const CheckoutPage = ({ cartItems, total }) => (
+const CheckoutPage = ({ cartItems, total, history}) => (
   <CheckoutPageContainer>
     <CheckoutHeaderContainer>
       <HeaderBlockContainer>
@@ -46,7 +46,7 @@ const CheckoutPage = ({ cartItems, total }) => (
       <br />
       4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
     </WarningContainer>
-    <StripeCheckoutButton price={total} />
+    <StripeCheckoutButton history={history} price={total} />
   </CheckoutPageContainer>
 );
 

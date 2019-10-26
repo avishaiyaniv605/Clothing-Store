@@ -8,6 +8,7 @@ export const CollectionPreviewContainer = styled.div`
 
 export const TitleContainer = styled.h1`
   font-size: 28px;
+  font-weight: lighter;
   margin-bottom: 25px;
   cursor: pointer;
 

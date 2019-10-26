@@ -6,6 +6,8 @@ export const CollectionPageContainer = styled.div`
 `;
 
 export const CollectionTitle = styled.h2`
+  font-weight: lighter;
+  text-transform: uppercase;
   font-size: 38px;
   margin: 0 auto 30px;
 `;
