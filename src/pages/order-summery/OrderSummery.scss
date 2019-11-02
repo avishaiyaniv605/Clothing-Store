@@ -29,11 +29,6 @@
       margin: 0 auto;
     }
 
-    .right-bordered {
-      padding-right: 6%;
-      border-right: 1px solid grey;
-    }
-
     .section-title {
       font-weight: bold;
     }
@@ -47,6 +42,10 @@
     .title {
       font-size: 2.5vw;
       font-weight: normal;
+    }
+
+    .vl {
+      border-left: 1px solid gray;
     }
   }
 }

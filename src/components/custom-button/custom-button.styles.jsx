@@ -34,6 +34,7 @@ const googleSignInStyles = css`
     background-color: white;
     color: #4285f4;
     border: 1px solid #4285f4;
+    transition: 300ms ease all;
   }
 `;
 

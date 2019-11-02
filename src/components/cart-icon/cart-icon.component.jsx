@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -11,14 +11,30 @@ import {
   ItemCountContainer
 } from "./cart-icon.styles";
 
-const CartIcon = ({ toggleCartHidden, itemCount }) => (
-  <div className="hvr-buzz-out">
-    <CartContainer onClick={toggleCartHidden}>
-      <ShoppingIcon />
-      <ItemCountContainer>{itemCount}</ItemCountContainer>
-    </CartContainer>
-  </div>
-);
+import "../../assets/animations.scss";
+
+const CartIcon = ({ toggleCartHidden, itemCount }) => {
+  const [animate, setAnimate] = useState(false);
+  const isMounting = useRef(true);
+
+  useEffect(() => {
+    if (isMounting.current) {
+      isMounting.current = false;
+    } else {
+      setAnimate(true);
+    }
+  }, [itemCount]);
+
+  const className = `hvr-underline-from-center ${animate ? "spin" : ""}`;
+  return (
+    <div className={className} onAnimationEnd={() => setAnimate(false)}>
+      <CartContainer onClick={toggleCartHidden}>
+        <ShoppingIcon />
+        <ItemCountContainer>{itemCount}</ItemCountContainer>
+      </CartContainer>
+    </div>
+  );
+};
 
 const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden())
